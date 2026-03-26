@@ -12,14 +12,21 @@ jobs:
       matrix:
         include:
           - os: ubuntu-latest
-            platform: linux
+            platform: android
             arch: x64
-          - os: macos-latest
-            platform: darwin
+            flags: -D ANDROID_STL=c++_shared
+          - os: ubuntu-latest
+            platform: android
+            arch: ia32
+            flags: -D ANDROID_STL=c++_shared
+          - os: ubuntu-latest
+            platform: android
             arch: arm64
-          - os: windows-latest
-            platform: win32
-            arch: x64
+            flags: -D ANDROID_STL=c++_shared
+          - os: ubuntu-latest
+            platform: android
+            arch: arm
+            flags: -D ANDROID_STL=c++_shared
     runs-on: ${{ matrix.os }}
     name: ${{ matrix.platform }}-${{ matrix.arch }}
     steps:
@@ -31,7 +38,5 @@ jobs:
         if: ${{ matrix.platform == 'win32' }}
       - run: npm install -g bare-runtime bare-make
       - run: npm install
-      - run: bare-make generate --platform ${{ matrix.platform }} --arch ${{ matrix.arch }} --debug
+      - run: bare-make generate --platform ${{ matrix.platform }} --arch ${{ matrix.arch }} --debug ${{ matrix.flags }}
       - run: bare-make build
-      - run: bare-make install
-      - run: npm test

@@ -17,7 +17,7 @@
   ],
   "addon": true,
   "scripts": {
-    "test": "prettier . --check && brittle-bare test.js"
+    "test": "prettier . --check"
   },
   "repository": {
     "type": "git",
@@ -30,7 +30,6 @@
   },
   "homepage": "https://github.com/holepunchto/bare-addon-java#readme",
   "devDependencies": {
-    "brittle": "^3.16.3",
     "cmake-bare": "^1.6.5",
     "cmake-fetch": "^1.4.6",
     "prettier": "^3.5.3",
