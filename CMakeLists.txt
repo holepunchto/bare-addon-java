@@ -9,7 +9,7 @@ project(bare_addon C CXX)
 use_java()
 
 fetch_package("github:holepunchto/libjstl#387f6d0")
-fetch_package("github:holepunchto/libjnitl#a8002df")
+fetch_package("github:holepunchto/libjnitl#a6824b4")
 
 add_bare_module(bare_addon)
 
