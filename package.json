@@ -30,7 +30,7 @@
   },
   "homepage": "https://github.com/holepunchto/bare-addon-java#readme",
   "devDependencies": {
-    "cmake-android": "^0.1.0",
+    "cmake-android": "^0.1.1",
     "cmake-bare": "^1.6.5",
     "cmake-fetch": "^1.4.6",
     "prettier": "^3.5.3",
